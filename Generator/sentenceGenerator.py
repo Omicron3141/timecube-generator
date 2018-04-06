@@ -53,4 +53,4 @@ def postprocess(tokens):
 if __name__ == '__main__':
     load("model.npz")
     for i in range(10):
-    	print postprocess(generate())
+    	print(postprocess(generate()))
