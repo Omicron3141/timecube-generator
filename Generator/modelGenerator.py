@@ -70,7 +70,7 @@ def main(readfile, savefile):
 
 
 parser = argparse.ArgumentParser(description='Generates a markov model from raw text')
-parser.add_argument('readfile', default='corpus.txt',
+parser.add_argument('readfile', default='corpusV2.txt',
     help='The raw text file to read from')
 parser.add_argument('savefile', default='model.npz',
     help='The npz file to write to')

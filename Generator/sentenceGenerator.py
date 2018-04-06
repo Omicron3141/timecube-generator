@@ -35,7 +35,7 @@ def generate():
 
 def postprocess(tokens):
 	capitalize = ["i", "gene", "god", "jesus", "dr", "washington", "earth", "ray", "bible", "wikipedia", "jesus", "santa"]
-	no_prev_space = ["n't", "'s", ",", ".", "?", "!", "10,000.00"]
+	no_prev_space = ["n't", "'s", ",", ".", "?", "!", "10,000.00", "%"]
 	sentence = ""
 	for i in range(len(tokens)-1):
 		this = tokens[i]
