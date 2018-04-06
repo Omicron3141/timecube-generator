@@ -55,7 +55,7 @@ span.btn-generate:hover{
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
-    margin-top: 20px;
+    text-align: center;
 }
 
 /* The slider itself */
