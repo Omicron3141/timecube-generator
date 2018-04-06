@@ -6,6 +6,7 @@ vocab = np.zeros((1))
 transitions = np.zeros((1,1))
 
 minlength = 10
+maxlength = 40
 
 def load(filename):
     global vocab
@@ -27,7 +28,7 @@ def generate():
 		index = np.random.choice(np.arange(vocab_size), p=transitions[currenttoken])
 		sentence += [vocab[index]]
 		currenttoken = index
-	if len(sentence) < minlength:
+	if len(sentence) < minlength or len(sentence) > maxlength:
 		return generate()
 	else:
 		return sentence[:-1]

@@ -21,8 +21,6 @@ header.masthead .overlay {
 }
 
 header.masthead .quote-holder {
-  padding-top: 100px;
-  padding-bottom: 100px;
   height: 500px;
   position: relative;
 }
@@ -30,13 +28,17 @@ header.masthead .quote-holder {
 h1.quote {
 	color: white;
 	font-size: 35pt;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 h2.attribution {
-	padding-top: 50px;
 	float: right;
 	color: white;
-
+	position: relative;
+	margin-top: -50px;
+	margin-bottom: 50px;
 }
 
 span.btn-generate{

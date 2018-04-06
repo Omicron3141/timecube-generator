@@ -1,4 +1,5 @@
 var timer = null;
+var ready = true;
 
 $(document).ready(function() {
   $("#timeSlider").on("input", onSliderChange);
@@ -6,16 +7,28 @@ $(document).ready(function() {
 });
 
 function loadNew(){
-  $.get("/new", function(data, status){
-    if (status == "success") {
-      // send the returned student object to the populate function
-      populateNewSentence(data);
-    }
-  });
+  if (ready) {
+	$.get("/new", function(data, status){
+      if (status == "success") {
+	    // send the returned student object to the populate function
+        startPopulateNewSentence(data);
+	  }
+	});
+  }
 }
 
-function populateNewSentence(data){
+function startPopulateNewSentence(data){
+	ready = false;
+	$("#quote").fadeOut(500, function(){
+            endPopulateNewSentence(data);
+        });
+}
+
+function endPopulateNewSentence(data){
 	$("#quote").html(data);
+	$("#quote").fadeIn(500, function(){
+            ready = true;
+        });
 }
 
 function onSliderChange(){
