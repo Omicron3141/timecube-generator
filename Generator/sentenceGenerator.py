@@ -15,6 +15,9 @@ def load(filename):
     vocab = npzfile['vocab']
     transitions = npzfile['transitions']
 
+def create_sentence():
+	return postprocess(generate())
+
 def generate():
 	currenttoken = np.where(vocab == "<s>")[0][0]
 	endtoken = np.where(vocab == "</s>")[0][0]
