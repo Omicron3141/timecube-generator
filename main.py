@@ -16,7 +16,7 @@ app = create_app()
 
 @app.before_first_request
 def load_data():
-	print "Loading initial data"
+	print("Loading initial data")
 	sentenceGenerator.load("Generator/model.npz")
 
 @app.route('/')
